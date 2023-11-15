@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>game i guess</title>
+        <title>Nothing Special Here</title>
     
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
@@ -29,7 +29,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#sakin"><span class="text-warning">A</span>bout me!</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#sakin"><span class="text-warning">A</span>bout us!</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#game"><span class="text-warning">C</span>rud</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#blog"><span class="text-warning">B</span>log</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#testimonial"><span class="text-warning">Our</span> Team</a></li>
@@ -111,126 +111,6 @@
         </div>
     </div>
 
-    <script>
-        // Function to populate the list box with data
-        function populateDataList() {
-            var dataList = document.getElementById("dataList");
-            dataList.innerHTML = ""; // Clear the list box
-    
-            // Make an AJAX request to fetch data from your PHP script
-            $.ajax({
-                url: 'getdata.php',
-                method: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    console.log(data); // Log the received data to the console
-    
-                    // Populate the list box with fetched data
-                    data.forEach(function (item) {
-                        var option = document.createElement("option");
-                        option.value = item.id;
-    
-                        // Set data attributes for first and last names
-                        option.dataset.first = item.stud_first;
-                        option.dataset.last = item.stud_last;
-    
-                        // Use <div> elements for separate columns
-                        option.innerHTML = '<div>ID: ' + item.id + '</div>' +
-                            '<div>First Name: ' + item.stud_first + '</div>' +
-                            '<div>Last Name: ' + item.stud_last + '</div>';
-    
-                        dataList.appendChild(option);
-                    });
-    
-                    // Add event listener to the select element
-                    dataList.addEventListener("change", function () {
-                        // Get the selected option
-                        var selectedOption = dataList.options[dataList.selectedIndex];
-    
-                        // Update the textboxes with the selected data
-                        $("#firstName").val(selectedOption.dataset.first || "");
-                        $("#lastName").val(selectedOption.dataset.last || "");
-                    });
-                },
-                error: function (xhr, status, error) {
-                    console.error("Error: " + status);
-                }
-            });
-        }
-    
-          // Function to handle the "Add" button click
-    function handleAddButtonClick() {
-        // Get values from textboxes
-        var firstName = $("#firstName").val();
-        var lastName = $("#lastName").val();
-
-        // Check if both fields are not empty
-        if (firstName && lastName) {
-            // Make an AJAX request to add data to the database
-            $.ajax({
-                url: 'add.php', // Replace with your PHP script for adding data
-                method: 'POST',
-                data: {
-                    stud_first: firstName,
-                    stud_last: lastName
-                },
-                success: function (response) {
-                    // Assuming your PHP script returns a success message
-                    console.log(response);
-
-                    // Show success toast
-                    showSuccessToast();
-
-                    // Clear textboxes
-                    $("#firstName").val("");
-                    $("#lastName").val("");
-
-                    // After adding, refresh the list
-                    populateDataList();
-                },
-                error: function (xhr, status, error) {
-                    console.error("Error: " + status);
-                }
-            });
-        } else {
-            alert("Please enter both first name and last name.");
-        }
-    }
-
-    // Add a click event listener to the "Add" button
-    $("#addButton").click(handleAddButtonClick);
-
-    // Call the function to populate the list box when the page is loaded
-    $(document).ready(function () {
-        populateDataList();
-    });
-
-    // Manually show the success toast
-    function showSuccessToast() {
-        var successToast = document.getElementById('successToast');
-        successToast.classList.add('show');
-
-        // Close the toast manually when the close button is clicked
-        $('#successToast .btn-close').click(function () {
-            hideSuccessToast();
-        });
-    }
-
-    // Manually hide the success toast
-    function hideSuccessToast() {
-        var successToast = document.getElementById('successToast');
-        successToast.classList.remove('show');
-    }
-    </script>
-    
-    
-    
-    
-    
-    
-    
-        
-     
         <section class="page-section bg-black text-white mb-0" id="blog" style="background-image: url(images/R.jfif); background-size: cover;">
             <div class="container">
                 <h2 class="page-section-heading text-center text-uppercase text-white">Blog</h2>
@@ -272,7 +152,7 @@
   <div class="row text-center">
     <div class="col-md-4 mb-5">
       <div class="d-flex justify-content-center mb-4">
-        <img src="images/damn.jpg"
+        <img src="dead.jpg"
           class="rounded-circle shadow-1-strong" width="150" height="150" />
       </div>
       <h5 class="mb-3" >Justine Edrian Umerez</h5>
